@@ -75,6 +75,7 @@ function handleInput(value) {
 buttons.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.preventDefault();
+    btn.blur();
     handleInput(e.target.value);
   });
 });
@@ -82,6 +83,7 @@ buttons.forEach((btn) => {
 // Keyboard Pressed
 document.addEventListener("keydown", (e) => {
   // Map numpad codes to their actual characters
+  e.preventDefault();
   const numpadMap = {
     Numpad0: "0",
     Numpad1: "1",
