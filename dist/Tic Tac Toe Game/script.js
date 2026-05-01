@@ -36,8 +36,8 @@ document.querySelector("#vsComputerBtn").addEventListener("click", () => {
   menuContainer.style.display = "none"; // hide menu
   gameContainer.style.display = "block"; // show game
   initializeGame();
-  currentPlayer = "X";
-  gameStatus.textContent = `${currentPlayer}'s turn`;
+  // currentPlayer = "X";
+  // gameStatus.textContent = `${currentPlayer}'s turn`;
 });
 
 cells.forEach((cell) => cell.addEventListener("click", cellClicked));
@@ -81,6 +81,8 @@ function computerMove() {
   const emptyCells = options
     .map((val, idx) => (val === "" ? idx : null))
     .filter((idx) => idx !== null);
+    console.log(emptyCells);
+    
 
   if (emptyCells.length === 0) return;
 
