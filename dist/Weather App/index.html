@@ -1,36 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-</head>
-<body>
-    <div class="weatherContainer">
-        <!-- header -->
-        <header>Weather Dashboard</header>
+    <link rel="stylesheet" href="../tailwind.css" />
+  </head>
+  <body
+    class="bg-linear-to-r from-blue-400 to-indigo-600 min-h-screen text-white"
+  >
+    <div class="grid grid-rows-[10vh_90vh] grid-cols-1 gap-4">
+      <!-- header -->
+      <header class="bg-blue-700 flex items-center justify-center">
+        Weather Dashboard
+      </header>
 
-        <!-- main layout -->
-        <main>
-            <!-- left panel: Search -->
-            <section>
-                <input type="text" placeholder="Enter city name" name="" id="">
-                <button>Search</button>
-                <button>Use Current Location</button>
-            </section>
+      <!-- main layout -->
+      <main class="grid grid-cols-2">
+        <!-- left panel: Search -->
+        <section class="flex flex-col items-center justify-start">
+          <input type="text" placeholder="Enter city name" name="" id="" />
+          <button>Search</button>
+          <button>Use Current Location</button>
+        </section>
 
-            <!-- right panel: Forecast -->
-            <section>
-                <h2>Today's Forecast</h2>
-                <div>
-                    <!-- today's forecast appear here -->
-                </div>
-                <h3>4 Day Forecast</h3>
-                <div>
-                    <!-- 4 days forecast appear here-->
-                </div>
-            </section>
-        </main>
+        <!-- right panel: Forecast -->
+        <section class="grid-rows-[60%_40%] gap-3">
+          <div>
+            <h2>Today's Forecast</h2>
+            <!-- today's forecast appear here -->
+            <div>Today's Weather</div>
+          </div>
+          <div>
+            <h3>4 Day Forecast</h3>
+            <div class="flex">
+              <!-- 4 days forecast appear here-->
+              <div>Panel1</div>
+              <div>Panel2</div>
+              <div>Panel3</div>
+              <div>Panel4</div>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
-</body>
+  </body>
 </html>
