@@ -6,43 +6,65 @@
     <title>Weather App</title>
     <link rel="stylesheet" href="../tailwind.css" />
   </head>
-  <body
-    class="bg-linear-to-r from-blue-400 to-indigo-600 min-h-screen text-white"
-  >
-    <div class="grid grid-rows-[10vh_90vh] grid-cols-1 gap-4">
+  <body class="bg-blue-200 min-h-screen text-white">
+    <div class="grid grid-rows-[10vh_90vh] grid-cols-1">
       <!-- header -->
-      <header class="bg-blue-700 flex items-center justify-center">
+      <header
+        class="bg-violet-700 font-bold flex items-center justify-center mb-5"
+      >
         Weather Dashboard
       </header>
 
       <!-- main layout -->
-      <main class="grid grid-cols-2">
+      <main class="grid grid-cols-[500px_auto]">
         <!-- left panel: Search -->
-        <section class="flex flex-col items-center justify-start">
-          <input type="text" placeholder="Enter city name" name="" id="" />
-          <button>Search</button>
-          <button>Use Current Location</button>
+        <section class="flex flex-col gap-5 m-5">
+          <div class="flex flex-col gap-1.5">
+            <h3 class="text-black font-bold">Enter a City Name</h3>
+            <input
+              id="cityInput"
+              type="text"
+              placeholder="E.g. Pokhara, Hetauda, Kathmandu"
+              class="bg-white w-full h-10 rounded text-black outline-none ring-2 ring-gray-400 focus:ring-2 focus:ring-blue-500 p-2"
+            />
+          </div>
+          <button id="searchBtn" class="bg-violet-700 h-10 w-full rounded">
+            Search
+          </button>
+          <div
+            class="flex items-center text-gray-500 font-semibold text-sm w-full"
+          >
+            <div class="flex-1 border-t border-gray-400"></div>
+            <span class="px-2">or</span>
+            <div class="flex-1 border-t border-gray-400"></div>
+          </div>
+          <button
+            id="current_Location"
+            class="bg-slate-600 h-10 w-full rounded"
+          >
+            Use Current Location
+          </button>
         </section>
 
         <!-- right panel: Forecast -->
-        <section class="grid-rows-[60%_40%] gap-3">
-          <div>
-            <h2>Today's Forecast</h2>
+        <section class="grid-rows-2 m-5">
+          <div id="today" class="bg-violet-600 h-[30vh] w-full rounded mb-5 p-5">
             <!-- today's forecast appear here -->
-            <div>Today's Weather</div>
           </div>
+
           <div>
-            <h3>4 Day Forecast</h3>
-            <div class="flex">
+            <h2 class="text-black font-bold text-xl">4-Day Forecast</h2>
+            <div class="flex gap-4 mt-5">
               <!-- 4 days forecast appear here-->
-              <div>Panel1</div>
-              <div>Panel2</div>
-              <div>Panel3</div>
-              <div>Panel4</div>
+              <div class="forecast bg-slate-500 rounded flex-1 h-[35vh] p-2"></div>
+              <div class="forecast bg-slate-500 rounded flex-1 h-[35vh] p-2"></div>
+              <div class="forecast bg-slate-500 rounded flex-1 h-[35vh] p-2"></div>
+              <div class="forecast bg-slate-500 rounded flex-1 h-[35vh] p-2"></div>
             </div>
           </div>
         </section>
       </main>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
