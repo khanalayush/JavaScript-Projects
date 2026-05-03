@@ -61,15 +61,15 @@ function today_Weather(data) {
   const todayForecast = document.getElementById("today");
   todayForecast.innerHTML = `
   <div class="flex justify-between items-center w-full">
-    <div class="text-left">
-      <h2 class="text-xl font-bold">${data.name}</h2>
+    <div class="text-left text-sm">
+      <h3 class="font-bold text-xl">${data.name}</h2>
       <p>Temperature: ${data.main.temp}°C</p>
-      <p>Condition: ${data.weather[0].description}</p>
+      <p>${data.weather[0].description}</p>
       <p>Humidity: ${data.main.humidity}%</p>
       <p>Wind: ${data.wind.speed} m/s</p>
     </div>
     <div class="shrink-0">
-      <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="Weather icon" class="w-24 h-24 object-contain"/>
+      <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="Weather icon" class="w-24 h-24 sm:w-36 sm:h-36 object-contain"/>
     </div>
   </div>
   `;
@@ -89,12 +89,14 @@ async function fetchForecast(lat, lon) {
       const item = data.list[i * 8];
       const date = new Date(item.dt_txt).toLocaleDateString();
       forecastDivs[i].innerHTML = `
+      <div class="text-sm">
           <h4 class="font-semibold">${date}</h4>
           <img src="http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png" alt="Weather icon" />
           <p>Temperature: ${item.main.temp}°C</p>
           <p>${item.weather[0].description}</p>
           <p>Humidity: ${item.main.humidity}%</p>
           <p>Wind: ${item.wind.speed} m/s</p>
+      </div>
     `;
     }
   } catch {
